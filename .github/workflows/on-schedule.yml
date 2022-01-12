@@ -1,0 +1,15 @@
+on:
+  schedule:
+    - cron: '5 * * * *'
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GH_PAT }}
+      - run: git config --global user.name github-actions
+      - run: git config --global user.email github-actions@github.com
+      - run: date >> content.txt
+      - run: git add content.txt && git commit -m update && git push
