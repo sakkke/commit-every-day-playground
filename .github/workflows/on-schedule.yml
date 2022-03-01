@@ -13,5 +13,5 @@ jobs:
           token: ${{ secrets.GH_PAT }}
       - run: git config --global user.name sakkke
       - run: git config --global user.email 84666033+sakkke@users.noreply.github.com
-      - run: date >> content.txt
+      - run: bash modify.sh
       - run: git add content.txt && git commit -m update && git push
