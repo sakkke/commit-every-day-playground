@@ -1,1 +1,1 @@
-printf 'echo ok # %s' "$(date)" >> content.txt
+printf 'echo ok # %s\n' "$(date)" >> content.txt
